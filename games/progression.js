@@ -22,7 +22,7 @@ const generateQuestionsAndAnswers = () => {
     const positionToGuess = getRandom(progression.length - 1, 0);
     const correctAnswer = `${progression[positionToGuess]}`;
 
-    progression[positionToGuess] = '...';
+    progression[positionToGuess] = '..';
     const question = progression.join(' ');
 
     result.push([question, correctAnswer]);
