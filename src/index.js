@@ -8,7 +8,7 @@ const greetingWithNameReturn = () => {
 };
 
 const getRandom = (endNum, startNum = 1) => {
-  const result = Math.round(startNum + Math.random() * (endNum - startNum));
+  const result = Math.floor(startNum + Math.random() * (endNum - startNum + 1));
   return result;
 };
 
