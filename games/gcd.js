@@ -15,7 +15,6 @@ const generateQuestionsAndAnswers = () => {
   const result = [];
 
   for (let i = 0; i < 3; i += 1) {
-    
     const number1 = getRandom(50);
     const number2 = getRandom(50);
 
@@ -27,9 +26,9 @@ const generateQuestionsAndAnswers = () => {
   return result;
 };
 
-const evenGame = () => {
+const gcdGame = () => {
   const startMessage = 'Find the greatest common divisor of given numbers.';
   game(startMessage, generateQuestionsAndAnswers());
 };
 
-export default evenGame;
+export default gcdGame;
