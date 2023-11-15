@@ -11,21 +11,15 @@ const generateQuestionsAndAnswers = () => {
     const number2 = getRandom(20, 0);
     const operator = getRandom(2, 0);
 
-    switch (operator) {
-      case 0:
-        question = `${number1} + ${number2}`;
-        correctAnswer = `${number1 + number2}`;
-        break;
-      case 1:
-        question = `${number1} - ${number2}`;
-        correctAnswer = `${number1 - number2}`;
-        break;
-      case 2:
-        question = `${number1} * ${number2}`;
-        correctAnswer = `${number1 * number2}`;
-        break;
-      default:
-        throw new Error('Error!');
+    if (operator === 0) {
+      question = `${number1} + ${number2}`;
+      correctAnswer = `${number1 + number2}`;
+    } else if (operator === 1) {
+      question = `${number1} - ${number2}`;
+      correctAnswer = `${number1 - number2}`;
+    } else {
+      question = `${number1} * ${number2}`;
+      correctAnswer = `${number1 * number2}`;
     }
 
     result.push([question, correctAnswer]);
