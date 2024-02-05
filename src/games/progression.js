@@ -1,4 +1,4 @@
-import { getRandom, game } from '../src/index.js';
+import { getRandom, runGame } from '../index.js';
 
 const getProgression = () => {
   const progressionLength = getRandom(15, 5);
@@ -27,7 +27,7 @@ const generateQuestionAndAnswer = () => {
 
 const progressionGame = () => {
   const startMessage = 'What number is missing in the progression?';
-  game(startMessage, generateQuestionAndAnswer);
+  runGame(startMessage, generateQuestionAndAnswer);
 };
 
 export default progressionGame;

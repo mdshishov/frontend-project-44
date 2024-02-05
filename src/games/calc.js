@@ -1,4 +1,4 @@
-import { getRandom, game } from '../src/index.js';
+import { getRandom, runGame } from '../index.js';
 
 const generateQuestionAndAnswer = () => {
   let question = '';
@@ -24,7 +24,7 @@ const generateQuestionAndAnswer = () => {
 
 const calcGame = () => {
   const startMessage = 'What is the result of the expression?';
-  game(startMessage, generateQuestionAndAnswer);
+  runGame(startMessage, generateQuestionAndAnswer);
 };
 
 export default calcGame;

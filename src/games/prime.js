@@ -1,4 +1,4 @@
-import { getRandom, game } from '../src/index.js';
+import { getRandom, runGame } from '../index.js';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -19,7 +19,7 @@ const generateQuestionAndAnswer = () => {
 
 const primeGame = () => {
   const startMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  game(startMessage, generateQuestionAndAnswer);
+  runGame(startMessage, generateQuestionAndAnswer);
 };
 
 export default primeGame;

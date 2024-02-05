@@ -1,4 +1,4 @@
-import { getRandom, game } from '../src/index.js';
+import { getRandom, runGame } from '../index.js';
 
 const generateQuestionAndAnswer = () => {
   const question = getRandom(50);
@@ -9,7 +9,7 @@ const generateQuestionAndAnswer = () => {
 
 const evenGame = () => {
   const startMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
-  game(startMessage, generateQuestionAndAnswer);
+  runGame(startMessage, generateQuestionAndAnswer);
 };
 
 export default evenGame;
