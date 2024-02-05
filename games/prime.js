@@ -10,21 +10,16 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateQuestionsAndAnswers = () => {
-  const result = [];
+const generateQuestionAndAnswer = () => {
+  const question = getRandom(50);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  for (let i = 0; i < 3; i += 1) {
-    const question = getRandom(50);
-    const correctAnswer = isPrime(question) ? 'yes' : 'no';
-    result.push([question, correctAnswer]);
-  }
-
-  return result;
+  return [question, correctAnswer];
 };
 
 const primeGame = () => {
   const startMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  game(startMessage, generateQuestionsAndAnswers());
+  game(startMessage, generateQuestionAndAnswer);
 };
 
 export default primeGame;

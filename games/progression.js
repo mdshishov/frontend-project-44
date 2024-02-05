@@ -13,27 +13,21 @@ const getProgression = () => {
   return result;
 };
 
-const generateQuestionsAndAnswers = () => {
-  const result = [];
+const generateQuestionAndAnswer = () => {
+  const progression = getProgression();
 
-  for (let i = 0; i < 3; i += 1) {
-    const progression = getProgression();
+  const positionToGuess = getRandom(progression.length - 1, 0);
+  const correctAnswer = `${progression[positionToGuess]}`;
 
-    const positionToGuess = getRandom(progression.length - 1, 0);
-    const correctAnswer = `${progression[positionToGuess]}`;
+  progression[positionToGuess] = '..';
+  const question = progression.join(' ');
 
-    progression[positionToGuess] = '..';
-    const question = progression.join(' ');
-
-    result.push([question, correctAnswer]);
-  }
-
-  return result;
+  return [question, correctAnswer];
 };
 
 const progressionGame = () => {
   const startMessage = 'What number is missing in the progression?';
-  game(startMessage, generateQuestionsAndAnswers());
+  game(startMessage, generateQuestionAndAnswer);
 };
 
 export default progressionGame;

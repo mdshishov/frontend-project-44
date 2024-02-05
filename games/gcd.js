@@ -11,24 +11,19 @@ const getGreatestCommonDivisor = (number1, number2) => {
   return result;
 };
 
-const generateQuestionsAndAnswers = () => {
-  const result = [];
+const generateQuestionAndAnswer = () => {
+  const number1 = getRandom(50);
+  const number2 = getRandom(50);
 
-  for (let i = 0; i < 3; i += 1) {
-    const number1 = getRandom(50);
-    const number2 = getRandom(50);
+  const question = `${number1} ${number2}`;
+  const correctAnswer = `${getGreatestCommonDivisor(number1, number2)}`;
 
-    const question = `${number1} ${number2}`;
-    const correctAnswer = `${getGreatestCommonDivisor(number1, number2)}`;
-    result.push([question, correctAnswer]);
-  }
-
-  return result;
+  return [question, correctAnswer];
 };
 
 const gcdGame = () => {
   const startMessage = 'Find the greatest common divisor of given numbers.';
-  game(startMessage, generateQuestionsAndAnswers());
+  game(startMessage, generateQuestionAndAnswer);
 };
 
 export default gcdGame;

@@ -12,12 +12,12 @@ const getRandom = (endNum, startNum = 1) => {
   return result;
 };
 
-const game = (startMessage, questionsAndAnswers) => {
+const game = (startMessage, questionAndAnswer, roundCount = 3) => {
   const name = greetingWithNameReturn();
   console.log(startMessage);
 
-  for (let i = 0; i < 3; i += 1) {
-    const [question, correctAnswer] = questionsAndAnswers[i];
+  for (let i = 0; i < roundCount; i += 1) {
+    const [question, correctAnswer] = questionAndAnswer();
 
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
