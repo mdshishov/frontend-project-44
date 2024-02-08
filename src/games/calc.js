@@ -19,7 +19,7 @@ const generateQuestionAndAnswer = () => {
     correctAnswer = `${number1 * number2}`;
   }
 
- return [question, correctAnswer];
+  return [question, correctAnswer];
 };
 
 const calcGame = () => {

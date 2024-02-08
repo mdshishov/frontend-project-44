@@ -13,25 +13,25 @@ const getRandom = (endNum, startNum = 1) => {
 };
 
 const runGame = (startMessage, generateQuestionAndAnswer, roundCount = 3) => {
-  const name = greetingWithNameReturn();
+  const userName = greetingWithNameReturn();
   console.log(startMessage);
 
   for (let i = 0; i < roundCount; i += 1) {
     const [question, correctAnswer] = generateQuestionAndAnswer();
 
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer !== correctAnswer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
 
     console.log('Correct!');
   }
 
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export { greetingWithNameReturn, getRandom, runGame };
